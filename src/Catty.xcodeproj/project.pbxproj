@@ -1715,6 +1715,7 @@
 		BCFED6F62113188700BE57BF /* MyFirstProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFED6F52113188700BE57BF /* MyFirstProjectTests.swift */; };
 		BCFED6F8211318A100BE57BF /* ProjectTVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFED6F7211318A100BE57BF /* ProjectTVCTests.swift */; };
 		C6A06BEC1EC8CA4C0000C656 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC8B8C0B21945B560F7272 /* AlertController.swift */; };
+		C82FC8DD26964F4A008DFBB8 /* TouchesFingerSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82FC8DC26964F4A008DFBB8 /* TouchesFingerSensor.swift */; };
 		C85A5CA0267A218F009BA454 /* Functions_0993.xml in Resources */ = {isa = PBXBuildFile; fileRef = C85A5C9F267A218F009BA454 /* Functions_0993.xml */; };
 		C8A0338326064F3C00702911 /* SetTempoToBrick+CBXMLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A0338226064F3C00702911 /* SetTempoToBrick+CBXMLHandler.swift */; };
 		C8CD7DD425E63D0A0018C655 /* BrickCategoryOverviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8CD7DD325E63D0A0018C655 /* BrickCategoryOverviewControllerTests.swift */; };
@@ -4157,6 +4158,7 @@
 		BCFED6F7211318A100BE57BF /* ProjectTVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTVCTests.swift; sourceTree = "<group>"; };
 		C286B2695528549DC9B2916D /* af */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = af; path = af.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C42D117BCEADFF7368CA3159 /* bn */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.strings; name = bn; path = bn.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C82FC8DC26964F4A008DFBB8 /* TouchesFingerSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesFingerSensor.swift; sourceTree = "<group>"; };
 		C85A5C9F267A218F009BA454 /* Functions_0993.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Functions_0993.xml; sourceTree = "<group>"; };
 		C8A0338226064F3C00702911 /* SetTempoToBrick+CBXMLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "SetTempoToBrick+CBXMLHandler.swift"; path = "Catty/Views/Custom/CollectionViewCells/BrickCells/Sound/SetTempoToBrick+CBXMLHandler.swift"; sourceTree = SOURCE_ROOT; };
 		C8CD7DD325E63D0A0018C655 /* BrickCategoryOverviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrickCategoryOverviewControllerTests.swift; sourceTree = "<group>"; };
@@ -7203,6 +7205,7 @@
 				4CB0F9F320A173B600D1BE2F /* RotationSensor.swift */,
 				4CB0F9F120A1739400D1BE2F /* SizeSensor.swift */,
 				4CB0F9EB20A1731700D1BE2F /* TransparencySensor.swift */,
+				C82FC8DC26964F4A008DFBB8 /* TouchesFingerSensor.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -12188,6 +12191,7 @@
 				4CF429ED213A82EB00B78897 /* IfThenLogicBeginBrick+Condition.swift in Sources */,
 				92C631911BC50DEE00486958 /* LanguageTranslationDefinesSwift.swift in Sources */,
 				AA74EEE51BC057B900D1E954 /* WaitBrick+CBXMLHandler.m in Sources */,
+				C82FC8DD26964F4A008DFBB8 /* TouchesFingerSensor.swift in Sources */,
 				4691E52725F2B27B00122891 /* SetBackgroundByIndexBrickCell.swift in Sources */,
 				5E43D71821928053006FDF2A /* SwellAll.swift in Sources */,
 				18390A6D24D057E100A07DFD /* StampBrickCell.swift in Sources */,
