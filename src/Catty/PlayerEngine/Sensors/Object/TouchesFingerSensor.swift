@@ -27,6 +27,7 @@
     static let defaultRawValue = 0.0
     static let requiredResource = ResourceType.touchHandler
     static let position = 20
+    static let screenWidth = 500
 
     let getTouchManager: () -> TouchManagerProtocol?
 
@@ -45,7 +46,7 @@
 
     func convertToStandardized(rawValue: Double, for spriteObject: SpriteObject) -> Double {
         guard let _ = getTouchManager()?.lastPositionInScene() else { return type(of: self).defaultRawValue }
-        return PositionXSensor.convertToStandardized(rawValue: rawValue, for: spriteObject)
+        return rawValue - Double(TouchesFingerSensor.screenWidth) / 2.0
     }
 
     func formulaEditorSections(for spriteObject: SpriteObject) -> [FormulaEditorSection] {

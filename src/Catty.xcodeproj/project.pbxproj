@@ -1311,6 +1311,7 @@
 		972622DD25F51A8F00ABCC7A /* ChangeBrightnessByNBrick+CBXMLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972622DC25F51A8F00ABCC7A /* ChangeBrightnessByNBrick+CBXMLHandler.swift */; };
 		972622E225F51B4500ABCC7A /* SetBrightnessBrick+CBXMLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972622E125F51B4500ABCC7A /* SetBrightnessBrick+CBXMLHandler.swift */; };
 		9728AE9E25DEEE5A00708EB6 /* ProjectDetailStoreViewControllerReportExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9728AE9D25DEEE5A00708EB6 /* ProjectDetailStoreViewControllerReportExtension.swift */; };
+		9742DC5B269A2EC600980DE8 /* TouchesFingerSensorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9742DC5A269A2EC600980DE8 /* TouchesFingerSensorTest.swift */; };
 		9767BAFA26668ECD009794E8 /* JoinThreeStringsFunctionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9767BAF926668ECD009794E8 /* JoinThreeStringsFunctionTest.swift */; };
 		97770B8825E5A88C00F51EFA /* SetBrightnessBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97770B8725E5A88C00F51EFA /* SetBrightnessBrick.swift */; };
 		97770B8F25E5AD2600F51EFA /* ChangeBrightnessByNBrick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97770B8E25E5AD2600F51EFA /* ChangeBrightnessByNBrick.swift */; };
@@ -3504,6 +3505,7 @@
 		972622DC25F51A8F00ABCC7A /* ChangeBrightnessByNBrick+CBXMLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChangeBrightnessByNBrick+CBXMLHandler.swift"; sourceTree = "<group>"; };
 		972622E125F51B4500ABCC7A /* SetBrightnessBrick+CBXMLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SetBrightnessBrick+CBXMLHandler.swift"; sourceTree = "<group>"; };
 		9728AE9D25DEEE5A00708EB6 /* ProjectDetailStoreViewControllerReportExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailStoreViewControllerReportExtension.swift; sourceTree = "<group>"; };
+		9742DC5A269A2EC600980DE8 /* TouchesFingerSensorTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchesFingerSensorTest.swift; sourceTree = "<group>"; };
 		9767BAF926668ECD009794E8 /* JoinThreeStringsFunctionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinThreeStringsFunctionTest.swift; sourceTree = "<group>"; };
 		97770B8725E5A88C00F51EFA /* SetBrightnessBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBrightnessBrick.swift; sourceTree = "<group>"; };
 		97770B8E25E5AD2600F51EFA /* ChangeBrightnessByNBrick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeBrightnessByNBrick.swift; sourceTree = "<group>"; };
@@ -6594,6 +6596,7 @@
 				4C82264C213FA7A300F3D750 /* PositionXSensorTest.swift */,
 				4C82264D213FA7A300F3D750 /* BrightnessSensorTest.swift */,
 				4C82264E213FA7A300F3D750 /* TransparencySensorTest.swift */,
+				9742DC5A269A2EC600980DE8 /* TouchesFingerSensorTest.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -11749,6 +11752,7 @@
 				4C6FE16A212D2D2E0067B7D5 /* AtanFunctionTest.swift in Sources */,
 				E579F11A253DCD90009107C8 /* ChangeXByNBrickTests.swift in Sources */,
 				4CEB224F1B95E47500B3BE2F /* BrickMoveManagerForeverTests.m in Sources */,
+				9742DC5B269A2EC600980DE8 /* TouchesFingerSensorTest.swift in Sources */,
 				E579F109253D9485009107C8 /* PhiroMotorMoveForwardBrickTests.swift in Sources */,
 				4C2CBB5525A5AA8400C1C143 /* XMLParserTests098.swift in Sources */,
 				0502CFAD26763BCC0028CF53 /* RecentlyUsedBricksManagerTests.swift in Sources */,
