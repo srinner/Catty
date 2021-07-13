@@ -46,6 +46,8 @@
 
     func convertToStandardized(rawValue: Double, for spriteObject: SpriteObject) -> Double {
         guard let _ = getTouchManager()?.lastPositionInScene() else { return type(of: self).defaultRawValue }
+        let width = spriteObject.dimensions(of: spriteObject.spriteNode.currentLook).width
+        let height = spriteObject.dimensions(of: spriteObject.spriteNode.currentLook).height
         return rawValue - Double(TouchesFingerSensor.screenWidth) / 2.0
     }
 
