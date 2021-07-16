@@ -56,15 +56,15 @@ final class FingerXSensorTest: XCTestCase {
 
     func testDefaultRawValue() {
         let sensor = FingerXSensor { nil }
-        XCTAssertEqual(type(of: sensor).defaultRawValue, sensor.rawValue(), accuracy: Double.epsilon)
+        XCTAssertEqual(type(of: sensor).defaultRawValue, sensor.rawValue(for: self.spriteObject), accuracy: Double.epsilon)
     }
 
     func testRawValue() {
         touchManager.lastTouch = CGPoint(x: 15, y: 20)
-        XCTAssertEqual(15, sensor.rawValue())
+        XCTAssertEqual(15, sensor.rawValue(for: self.spriteObject))
 
         touchManager.lastTouch = CGPoint(x: -130, y: 29)
-        XCTAssertEqual(-130, sensor.rawValue())
+        XCTAssertEqual(-130, sensor.rawValue(for: self.spriteObject))
     }
 
     func testConvertToStandardized() {

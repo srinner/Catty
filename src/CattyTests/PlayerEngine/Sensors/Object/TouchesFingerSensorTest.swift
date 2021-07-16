@@ -26,12 +26,12 @@ import XCTest
 
 final class TouchesFingerSensorTest: XCTestCase {
 
-    let screenWidth = 500
-
     var spriteObject: SpriteObject!
     var spriteNode: CBSpriteNodeMock!
     var sensor: TouchesFingerSensor!
     var touchManager: TouchManagerMock!
+    var lookA: Look!
+    var lookB: Look!
 
     override func setUp() {
         super.setUp()
@@ -51,33 +51,48 @@ final class TouchesFingerSensorTest: XCTestCase {
 
     func testDefaultRawValue() {
         let sensor = TouchesFingerSensor { nil }
-        XCTAssertEqual(TouchesFingerSensor.defaultRawValue, sensor.rawValue(), accuracy: Double.epsilon)
+        XCTAssertEqual(TouchesFingerSensor.defaultRawValue, sensor.rawValue(for: spriteObject), accuracy: Double.epsilon)
     }
 
     func testRawValue() {
-        let lastPoint = CGPoint(x: 10, y: 0)
-        self.touchManager.lastTouch = lastPoint
-        XCTAssertEqual(Double(lastPoint.x), self.sensor.rawValue(), accuracy: Double.epsilon)
+        let objectWidth = Double((spriteObject.dimensions(of: spriteObject.spriteNode.currentLook).width / 2) * spriteObject.spriteNode.xScale)
+        let objectHeight = Double((spriteObject.dimensions(of: spriteObject.spriteNode.currentLook).height / 2) * spriteObject.spriteNode.yScale)
+
+        spriteNode.catrobatPosition = CBPosition(x: 1, y: 1)
+
+        var x_value = 1 + Double(spriteNode.scene.size.width) / 2.0 + objectWidth
+        var y_value = 1 + Double(spriteNode.scene.size.height) / 2.0 + objectHeight
+        self.touchManager.lastTouch = CGPoint(x: x_value, y: y_value)
+
+        XCTAssertEqual(1, self.sensor.rawValue(for: spriteObject))
+
+        x_value += 1
+        self.touchManager.lastTouch = CGPoint(x: x_value, y: y_value)
+        XCTAssertEqual(0, self.sensor.rawValue(for: spriteObject))
+
+        x_value -= 1
+        y_value += 1
+        self.touchManager.lastTouch = CGPoint(x: x_value, y: y_value)
+        XCTAssertEqual(0, self.sensor.rawValue(for: spriteObject))
+
+        x_value += 1
+        self.touchManager.lastTouch = CGPoint(x: x_value, y: y_value)
+        XCTAssertEqual(0, self.sensor.rawValue(for: spriteObject))
+
+        spriteNode.catrobatPosition = CBPosition(x: 0, y: 0)
+
+        x_value = Double(spriteNode.scene.size.width) / 2.0
+        y_value = Double(spriteNode.scene.size.height) / 2.0
+        self.touchManager.lastTouch = CGPoint(x: x_value, y: y_value)
+
+        XCTAssertEqual(1, self.sensor.rawValue(for: spriteObject))
+        spriteNode.isHidden = true
+        XCTAssertEqual(0, self.sensor.rawValue(for: spriteObject))
     }
 
     func testConvertToStandarized() {
-        let lastPoint = CGPoint(x: 10, y: 0)
-        self.touchManager.lastTouch = lastPoint
-
-        // random
-        XCTAssertEqual(Double(10 - screenWidth / 2), self.sensor.convertToStandardized(rawValue: 10, for: spriteObject))
-
-        // center
-        XCTAssertEqual(Double(250 - screenWidth / 2), self.sensor.convertToStandardized(rawValue: 250, for: spriteObject))
-
-        // left
-        XCTAssertEqual(Double(63 - screenWidth / 2), self.sensor.convertToStandardized(rawValue: 63, for: spriteObject))
-
-        // right
-        XCTAssertEqual(Double(437 - screenWidth / 2), self.sensor.convertToStandardized(rawValue: 437, for: spriteObject))
-
-        self.touchManager.lastTouch = nil
-        XCTAssertEqual(TouchesFingerSensor.defaultRawValue, self.sensor.convertToStandardized(rawValue: 437, for: spriteObject))
+        XCTAssertEqual(1, self.sensor.convertToStandardized(rawValue: 1, for: spriteObject))
+        XCTAssertEqual(0, self.sensor.convertToStandardized(rawValue: 0, for: spriteObject))
     }
 
     func testTag() {
