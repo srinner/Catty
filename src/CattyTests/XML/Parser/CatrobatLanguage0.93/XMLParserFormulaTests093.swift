@@ -37,7 +37,7 @@ class XMLParserFormulaTests093: XMLAbstractTest {
     func testValidFormulaList() {
         let document = self.getXMLDocumentForPath(xmlPath: self.getPathForXML(xmlFile: "ValidFormulaList"))
 
-        let brickElement = self.getXMLElementsForXPath(document, xPath: "//program/objectList/object[1]/scriptList/script[1]/brickList/brick[2]")
+        let brickElement = self.getXMLElementsForXPath(document, xPath: "//program/scenes/scene[1]/objectList/object[1]/scriptList/script[1]/brickList/brick[2]")
         XCTAssertEqual(brickElement!.count, 1)
 
         let brickXMLElement = brickElement!.first
@@ -56,7 +56,7 @@ class XMLParserFormulaTests093: XMLAbstractTest {
 
     func testUnknownType() {
         let document = self.getXMLDocumentForPath(xmlPath: self.getPathForXML(xmlFile: "ValidFormulaList"))
-        let brickElement = self.getXMLElementsForXPath(document, xPath: "//program/objectList/object[4]/scriptList/script[1]/brickList/brick[4]")
+        let brickElement = self.getXMLElementsForXPath(document, xPath: "//program/scenes/scene[1]/objectList/object[4]/scriptList/script[1]/brickList/brick[4]")
         XCTAssertEqual(brickElement!.count, 1)
 
         let brickXMLElement = brickElement!.first
