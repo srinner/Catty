@@ -30,8 +30,6 @@ final class TouchesFingerSensorTest: XCTestCase {
     var spriteNode: CBSpriteNodeMock!
     var sensor: TouchesFingerSensor!
     var touchManager: TouchManagerMock!
-    var lookA: Look!
-    var lookB: Look!
 
     override func setUp() {
         super.setUp()

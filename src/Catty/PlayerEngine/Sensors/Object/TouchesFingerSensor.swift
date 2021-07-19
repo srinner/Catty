@@ -27,7 +27,6 @@
     static let defaultRawValue = 0.0
     static let requiredResource = ResourceType.touchHandler
     static let position = 20
-    static let screenWidth = 500
 
     let getTouchManager: () -> TouchManagerProtocol?
 
@@ -46,6 +45,20 @@
             return 0
         }
 
+        if isObjectTouched(for: spriteObject, touchPosition: touchPosition) == false {
+            return 0
+        }
+
+        let objectZ = spriteObject.spriteNode.zPosition
+        for objs in spriteObject.scene.objects() {
+            if objs.spriteNode.zPosition > objectZ && objs.spriteNode.isHidden == false && isObjectTouched(for: objs, touchPosition: touchPosition) {
+                return 0
+            }
+        }
+        return 1
+    }
+
+    func isObjectTouched(for spriteObject: SpriteObject, touchPosition: CGPoint) -> Bool {
         let touchX = PositionXSensor.convertToStandardized(rawValue: Double(touchPosition.x), for: spriteObject)
         let touchY = PositionYSensor.convertToStandardized(rawValue: Double(touchPosition.y), for: spriteObject)
 
@@ -56,13 +69,14 @@
         let objectY = spriteObject.spriteNode.catrobatPosition.y
 
         if (objectX + objectWidth) < touchX ||  (objectX - objectWidth) > touchX {
-            return 0
+            return false
         }
 
         if (objectY + objectHeight) < touchY || (objectY - objectHeight) > touchY {
-            return 0
+            return false
         }
-        return 1
+
+        return true
     }
 
     func convertToStandardized(rawValue: Double, for spriteObject: SpriteObject) -> Double {
